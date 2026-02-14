@@ -156,7 +156,7 @@ jobs:
       run: |
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
-        lunch ${{ github.event.inputs.MAKEFILE_NAME }}-userdebug && make clean && make ${{ github.event.inputs.BUILD_TARGET }}image -j8
+        lunch ${{ github.event.inputs.MAKEFILE_NAME }}-userdebug && make clean && m ${{ github.event.inputs.BUILD_TARGET }}image -j8
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Upload to Release
