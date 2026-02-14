@@ -154,6 +154,7 @@ jobs:
 
     - name: Building recovery
       run: |
+        export TERM=xterm-256color
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
         lunch ${{ github.event.inputs.MAKEFILE_NAME }}-userdebug && make clean && m ${{ github.event.inputs.BUILD_TARGET }}image -j8
